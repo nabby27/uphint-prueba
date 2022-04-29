@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup 
+        WHEN Popup is rendered
+        THEN Popup should render correctly
+     1`] = `
+<div
+  className="App"
+>
+  <Logo
+    isRecording={false}
+  />
+  <RecordingButton
+    isRecording={false}
+    onClick={[Function]}
+  />
+</div>
+`;
