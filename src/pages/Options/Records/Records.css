@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.Records {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.RowRecord {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+
+.RowRecord:nth-child(odd) {
+  background-color: #f7f7f7;
+}
+
+.RowRecord:nth-child(even) {
+  background-color: #fff;
+}
+
+.RowRecordTitle:nth-child(1) {
+  font-weight: bold;
+  background-color: #d4d4d4;
+}
+
+.RowRecordCell {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0px 50px;
+}
