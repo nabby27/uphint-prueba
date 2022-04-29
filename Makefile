@@ -3,6 +3,7 @@ CONTAINER_NAME=uphint
 install:
 	@docker-compose run --rm $(CONTAINER_NAME) npm install $(deps)
 
+.PHONY: build
 build: install
 	@docker-compose run --rm $(CONTAINER_NAME) npm run build
 	@docker-compose run --rm $(CONTAINER_NAME) chown -R node:node .

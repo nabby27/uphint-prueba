@@ -1,8 +1,16 @@
 {
     "roots": ["<rootDir>/src"],
     "transform": {
-      "^.+\\.ts?$": "ts-jest"
+      "^.+\\.(ts|tsx)$": "ts-jest"
     },
-    "testRegex": "(/test/).*\\.test.ts$",
-    "moduleFileExtensions": ["ts", "js"]
+    "testRegex": "(/test/).*\\.test.(ts|tsx)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "css", "png"],
+    "extensionsToTreatAsEsm": [".ts", ".tsx"],
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+    },
+    "setupFiles": [
+      "<rootDir>/src/test/setup.ts"
+    ],
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }

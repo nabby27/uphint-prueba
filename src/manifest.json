@@ -4,6 +4,9 @@
   "description": "A chrome extension with react for the Uphint Test",
   "options_page": "options.html",
   "background": { "service_worker": "background.bundle.js" },
+  "permissions": [
+    "storage"
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon-128.png"
