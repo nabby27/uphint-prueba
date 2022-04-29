@@ -1,8 +1,13 @@
 .OptionsContainer {
+  padding: 3rem 3rem;
   width: 100%;
   height: 50vh;
-  font-size: 2rem;
-  display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.Title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
 }
