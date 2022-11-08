@@ -1,5 +1,5 @@
 import { RecordData, RecordDataInDatetime } from '../../../service/RecordData.service';
-import './RowRecord.css';
+import './Records.css';
 
 export function Records({
   records

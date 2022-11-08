@@ -1,18 +1,21 @@
 CONTAINER_NAME=uphint
 
 install:
-	@docker-compose run --rm $(CONTAINER_NAME) npm install $(deps)
+	@docker compose run --rm $(CONTAINER_NAME) npm install $(deps)
 
 .PHONY: build
 build: install
-	@docker-compose run --rm $(CONTAINER_NAME) npm run build
-	@docker-compose run --rm $(CONTAINER_NAME) chown -R node:node .
+	@docker compose run --rm $(CONTAINER_NAME) npm run build
+	@docker compose run --rm $(CONTAINER_NAME) chown -R node:node .
+
+start:
+	@docker compose run --rm $(CONTAINER_NAME) npm run start
 
 prettier:
-	@docker-compose run --rm $(CONTAINER_NAME) npm run prettier
+	@docker compose run --rm $(CONTAINER_NAME) npm run prettier
 
 test:
-	@docker-compose run --rm $(CONTAINER_NAME) npm run test 
+	@docker compose run --rm $(CONTAINER_NAME) npm run test 
 
 test/watch:
-	@docker-compose run --rm $(CONTAINER_NAME) npm run test:watch
+	@docker compose run --rm $(CONTAINER_NAME) npm run test:watch

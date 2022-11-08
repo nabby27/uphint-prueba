@@ -1,20 +1,20 @@
 import logo from '../../../assets/img/icon-128.png';
-import './Popup.css';
+import './Logo.css';
 
 export function Logo({
-    isRecording,
+  isRecording,
 }: {
-    isRecording: boolean;
-}){
+  isRecording: boolean;
+}) {
   return (
-      <div className="ImageContainer">
-        <img className={`
+    <div className="ImageContainer">
+      <img className={`
                 Logo
                 ${isRecording && 'LogoAnimation'}
             `}
-            src={logo}
-            alt="uphint logo"
-        />
-      </div>
+        src={logo}
+        alt="uphint logo"
+      />
+    </div>
   );
 };
