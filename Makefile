@@ -14,8 +14,17 @@ start:
 prettier:
 	@docker compose run --rm $(CONTAINER_NAME) npm run prettier
 
-test:
-	@docker compose run --rm $(CONTAINER_NAME) npm run test 
+test/unit:
+	@docker compose run --rm $(CONTAINER_NAME) npm run test:unit 
 
-test/watch:
-	@docker compose run --rm $(CONTAINER_NAME) npm run test:watch
+test/unit/watch:
+	@docker compose run --rm $(CONTAINER_NAME) npm run test:unit:watch
+
+test/component:
+	@docker compose run --rm $(CONTAINER_NAME) npm run test:component 
+
+test/component/watch:
+	@docker compose run --rm $(CONTAINER_NAME) npm run test:component:watch
+
+test/e2e:
+	@docker compose run --rm $(CONTAINER_NAME) npm run test:e2e 

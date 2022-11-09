@@ -21,7 +21,8 @@
   },
   "include": [
     "src",
-    "custom.d.ts"
+    "custom.d.ts",
+    "node_modules/@types/puppeteer/index.d.ts"
   ],
   "exclude": [
     "build",
