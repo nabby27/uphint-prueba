@@ -7,3 +7,12 @@ services:
     working_dir: '/app'
     volumes:
       - ./:/app
+
+  uphint_e2e_test:
+    image: ghcr.io/puppeteer/puppeteer:18.1.0
+    container_name: 'uphint_e2e_test'
+    working_dir: '/app'
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      - ./:/app

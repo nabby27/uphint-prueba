@@ -1,4 +1,5 @@
 CONTAINER_NAME=uphint
+CONTAINER_E2E_TEST=uphint_e2e_test
 
 install:
 	@docker compose run --rm $(CONTAINER_NAME) npm install $(deps)
@@ -27,4 +28,4 @@ test/component/watch:
 	@docker compose run --rm $(CONTAINER_NAME) npm run test:component:watch
 
 test/e2e:
-	@docker compose run --rm $(CONTAINER_NAME) npm run test:e2e 
+	@docker compose run --rm $(CONTAINER_E2E_TEST) npm run test:e2e 
