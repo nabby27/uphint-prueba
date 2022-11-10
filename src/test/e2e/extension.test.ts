@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer'
 
-const EXTENSION_PATH = './src/'
-const extensionId = 'meekmgdpdhedokecafknhncnblcnfkmp'
+const EXTENSION_PATH = '/app/build'
+const extensionId = 'fkmajfgkmjgkckicclmhbhlmihlgmhfa'
 
 describe('Example extension group test', () => {
 
@@ -26,11 +26,16 @@ describe('Example extension group test', () => {
 
     it('Example test', async () => {
         const browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             devtools: true,
             args: [
                 `--disable-extensions-except=${EXTENSION_PATH}`,
                 `--load-extension=${EXTENSION_PATH}`,
+                '--headless=chrome',
+                "--disable-gpu",
+                "--disable-dev-shm-usage",
+                "--disable-setuid-sandbox",
+                "--no-sandbox",
             ]
         })
 
@@ -43,10 +48,8 @@ describe('Example extension group test', () => {
 
         const textEl = await page.$('button')
         const text = await textEl?.evaluate(e => e.innerText)
-        console.log('string', text);
 
-        // expect(text).toEqual('Start recording')
-        expect(true).toEqual(true)
+        expect(text).toEqual('Stop Recording')
     })
 
 })

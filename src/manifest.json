@@ -3,10 +3,13 @@
   "name": "Uphint Test",
   "description": "A chrome extension with react for the Uphint Test",
   "options_page": "options.html",
-  "background": { "service_worker": "background.bundle.js" },
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
   "permissions": [
     "storage"
   ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8rawzFK3ZcBx1ECnR5L8FTTm7Ty/wZj+ZdEMelRTNfIZ6B4dNwpW1TjFDg0QfVoxCvhbxZddcd2EhYNoeIizKJXvq2IOU1OzkyS81CqBmfjQlOao9Tdy1zfCpi0nn+49KrraGnhgWH0gH5Q9PdEU3CQztGckRbRTh39G2hDtW/o4rmEGRJMKAqSwL6h7sV5LeqdBq7NN58HiyeZPx09ZBfDB6JB2Xip9Dll/o0x8p6fq/Xa03z1IgM3R1xdhiMvhlW1M1nT8bqtl8J0EAmTxoVIexYR+oqWdRrxOk+QNmtPr7ryfxAKLU8OVyCYYSw88uyrG6/ayEcrrwr9f1HUFxwIDAQAB",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon-128.png"
@@ -16,15 +19,26 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
-      "js": ["contentScript.bundle.js"],
-      "css": ["content.styles.css"]
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.bundle.js"
+      ],
+      "css": [
+        "content.styles.css"
+      ]
     }
   ],
   "devtools_page": "devtools.html",
   "web_accessible_resources": [
     {
-      "resources": ["content.styles.css", "icon-128.png"],
+      "resources": [
+        "content.styles.css",
+        "icon-128.png"
+      ],
       "matches": []
     }
   ]
